@@ -11,7 +11,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import { Route, RouteName } from './routes';
 
 import DashboardView from '@/views/DashboardView.vue'
-import HistoryView from '@/views/HistoryView.vue'
+import CalendarView from '@/views/CalendarView.vue'
 import RequestsView from '@/views/RequestsView.vue';
 import ProfileView from '@/views/ProfileView.vue';
 
@@ -24,9 +24,9 @@ const router = createRouter({
             component: DashboardView
         },
         {
-            path: Route.HISTORY,
-            name: RouteName.HISTORY,
-            component: HistoryView
+            path: Route.CALENDAR,
+            name: RouteName.CALENDAR,
+            component: CalendarView
         },
         {
             path: Route.REQUESTS,
