@@ -52,7 +52,7 @@ const getData = (d: CalendarDate) => {
                 }">
                     {{ d.label }}
                 </Span>
-                <Span v-if="d.label === 1" class="gap-1 p-1 px-2 text-12 rounded-tl-md bg-primary-100 text-neutral-900">
+                <Span v-if="d.label === 1" class="gap-1 p-1 px-2 text-xs rounded-tl-md bg-primary-100 text-neutral-900">
                     {{ formatTime(new Date()) }} - {{ formatTime(new Date()) }}
                 </Span>
             </div>

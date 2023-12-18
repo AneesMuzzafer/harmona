@@ -21,20 +21,20 @@ import {formatDateCalendar} from "./../utils/helper";
 
             </div>
             <div class="flex flex-col gap-6 p-6 bg-white border rounded-2xl">
-                <div className="flex flex-wrap justify-between flex-1 gap-6">
-                    <div className="flex gap-3">
-                        <div className="w-6 h-6 rounded-[4px] border border-border-dark"></div>
-                        <span className="font-bold text-12 text-neutral-900">Available</span>
+                <div class="flex flex-wrap justify-between flex-1 gap-6">
+                    <div class="flex gap-3">
+                        <div class="w-6 h-6 rounded-[4px] border border-border-dark"></div>
+                        <span class="font-bold text-12 text-neutral-900">Leave</span>
                     </div>
-                    <div className="flex gap-3">
-                        <div className="w-6 h-6 rounded-[4px] border border-border-dark bg-neutral-50"></div>
-                        <span className="font-bold text-12 text-neutral-900">Completed</span>
+                    <div class="flex gap-3">
+                        <div class="w-6 h-6 rounded-[4px] border border-border-dark bg-neutral-50"></div>
+                        <span class="font-bold text-12 text-neutral-900">WFH</span>
                     </div>
-                    <div className="flex gap-3">
-                        <div className="w-6 h-6 rounded-[4px] border bg-primary-2"></div>
-                        <span className="font-bold text-12 text-neutral-900">Scheduled</span>
+                    <div class="flex gap-3">
+                        <div class="w-6 h-6 rounded-[4px] border bg-primary-2"></div>
+                        <span class="font-bold text-12 text-neutral-900">Holiday</span>
                     </div>
-                    <span className="font-bold text-right grow text-14">Today is {{formatDateCalendar(new Date())}}</span>
+                    <span class="font-bold text-right grow text-14">Today is {{formatDateCalendar(new Date())}}</span>
                 </div>
                 <CalendarItem />
             </div>
