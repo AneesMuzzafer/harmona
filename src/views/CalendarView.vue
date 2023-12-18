@@ -1,8 +1,4 @@
 <script setup lang="ts">
-
-import CalendarItem from '@/components/CalendarItem.vue';
-import {formatDateCalendar} from "./../utils/helper";
-
 /**
  * Harmona
  *
@@ -12,34 +8,52 @@ import {formatDateCalendar} from "./../utils/helper";
  * @copyright   2023 Anees Muzzafer
  */
 
+import { ref } from 'vue';
+import CalendarTable from '@/components/CalendarTable.vue';
+import * as DateFn from "date-fns";
+import { formatDateCalendar } from "./../utils/helper";
+import { Icon } from '@iconify/vue';
+
+const activeDate = ref(new Date());
+
 </script>
 
 <template>
-    <div class="flex gap-6 p-6">
-        <div class="flex flex-col gap-6">
-            <div class="h-32 bg-indigo-500 rounded-2xl">
-
+    <div class="flex flex-wrap gap-6 p-6">
+        <div class="flex flex-col flex-1 gap-6">
+            <div class="flex items-center gap-6 p-5 bg-indigo-500 rounded-2xl">
+                <span class="w-56 text-xl font-bold text-white">{{ DateFn.format(activeDate, "MMMM yyyy") }}</span>
+                <div class="flex gap-3">
+                    <div class="p-1 rounded-lg cursor-pointer bg-primary-2"
+                        @click="activeDate = DateFn.subMonths(activeDate, 1)">
+                        <Icon icon="lucide:chevron-left" color="white" />
+                    </div>
+                    <div class="p-1 rounded-lg cursor-pointer bg-primary-2"
+                        @click="activeDate = DateFn.addMonths(activeDate, 1)">
+                        <Icon icon="lucide:chevron-right" color="white" />
+                    </div>
+                </div>
             </div>
             <div class="flex flex-col gap-6 p-6 bg-white border rounded-2xl">
                 <div class="flex flex-wrap justify-between flex-1 gap-6">
                     <div class="flex gap-3">
                         <div class="w-6 h-6 rounded-[4px] border border-border-dark"></div>
-                        <span class="font-bold text-12 text-neutral-900">Leave</span>
+                        <span class="text-sm font-bold text-neutral-900">Leave</span>
                     </div>
                     <div class="flex gap-3">
                         <div class="w-6 h-6 rounded-[4px] border border-border-dark bg-neutral-50"></div>
-                        <span class="font-bold text-12 text-neutral-900">WFH</span>
+                        <span class="text-sm font-bold text-neutral-900">WFH</span>
                     </div>
                     <div class="flex gap-3">
                         <div class="w-6 h-6 rounded-[4px] border bg-primary-2"></div>
-                        <span class="font-bold text-12 text-neutral-900">Holiday</span>
+                        <span class="text-sm font-bold text-neutral-900">Holiday</span>
                     </div>
-                    <span class="font-bold text-right grow text-14">Today is {{formatDateCalendar(new Date())}}</span>
+                    <span class="font-bold text-right grow">Today is {{ formatDateCalendar(new Date()) }}</span>
                 </div>
-                <CalendarItem />
+                <CalendarTable :active-date="activeDate"/>
             </div>
         </div>
-        <div class="bg-white h-80 w-96 rounded-2xl">
+        <div class="bg-white h-80 min-w-[320px] rounded-2xl">
 
         </div>
     </div>

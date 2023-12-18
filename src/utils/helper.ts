@@ -43,3 +43,4 @@ export const getDays = (activeDate: Date):Array<CalendarDate> => {
 
 export const formatTime = (d: Date) => Date.format(d, "hh:mm bb");
 export const formatDateCalendar = (d: Date) => Date.format(d, "MMMM dd, yyyy");
+export const formatDateShort = (d: Date) => Date.format(d, "MMM dd, yyyy");

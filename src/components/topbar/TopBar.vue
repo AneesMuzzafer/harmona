@@ -13,13 +13,13 @@ const imgUrl = "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=8
 </script>
 
 <template>
-    <div class="flex items-center justify-between p-6">
+    <div class="flex justify-between p-6">
         <span class="text-2xl font-bold text-indigo-700">Hi, System User!</span>
-        <div class="flex">
+        <div class="flex items-center">
             <div class="w-10 h-10 rounded-full">
                 <img :src="imgUrl" class="object-cover w-10 h-10 rounded-full"/>
             </div>
-            <span class="ml-5 font-medium">System User</span>
+            <span class="ml-5 text-lg font-medium text-slate-800">System User</span>
         </div>
     </div>
 </template>

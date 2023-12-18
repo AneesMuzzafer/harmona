@@ -12,3 +12,13 @@ export interface CalendarDate {
     label: string | number;
     isActiveMonth: boolean;
 }
+
+export interface TableColumn {
+    type: TableDataType;
+    key: string;
+    name: string;
+}
+
+export interface TableRow {
+    [key: string]: string | Date;
+}

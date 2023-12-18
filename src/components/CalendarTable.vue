@@ -15,7 +15,7 @@ import type { CalendarDate } from "@/App";
 
 const props = defineProps({
     activeDate: Date,
-    scheduled: Array<String>,
+    scheduled: Array<Date>,
     completed: Array<Date>,
 });
 
@@ -41,20 +41,20 @@ const getData = (d: CalendarDate) => {
             </div>
         </div>
         <div className="flex flex-wrap [&>*:nth-child(7n)]:border-r-0">
-            <div v-for="(d, i) in days" :key="i" @Click="console.log(d)" class="flex flex-col basis-[14.285714%] group justify-between items-end h-16 lg:h-24 border-r text-14
+            <div v-for="(d, i) in days" :key="i" @click="console.log(d)" class="flex flex-col basis-[14.285714%] group justify-between items-end h-16 lg:h-24 border-r text-14
                 border-t border-border-dark [:nth-child(7)]:bg-red-500" :class="{
                     'bg-neutral-50': getData(d).isToday,
                     'bg-primary-2 cursor-pointer': false
                 }">
-                <Span class="p-3 text-14 text-neutral-900" :class="{
+                <span class="p-3 text-14 text-neutral-900" :class="{
                     // 'bg-alerts-error_base text-white rounded-full h-6 w-6 flex justify-center items-center mt-[11px] mr-[6px]': true,
                     // 'text-white': true
                 }">
                     {{ d.label }}
-                </Span>
-                <Span v-if="d.label === 1" class="gap-1 p-1 px-2 text-xs rounded-tl-md bg-primary-100 text-neutral-900">
+                </span>
+                <span v-if="d.label === 36" class="gap-1 p-1 px-2 text-xs rounded-tl-md bg-primary-100 text-neutral-900">
                     {{ formatTime(new Date()) }} - {{ formatTime(new Date()) }}
-                </Span>
+                </span>
             </div>
         </div>
     </div>
