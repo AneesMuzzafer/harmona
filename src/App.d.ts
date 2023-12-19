@@ -22,3 +22,7 @@ export interface TableColumn {
 export interface TableRow {
     [key: string]: string | Date;
 }
+
+export interface StringRecord {
+    [key: string]: string;
+}

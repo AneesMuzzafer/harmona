@@ -11,6 +11,7 @@
 import TableCustom from '@/components/TableCustom.vue';
 import { type TableColumn, type TableRow } from '@/App.d';
 import { TableDataType } from "./../utils/util";
+import InfoCard from '@/components/InfoCard.vue';
 
 const columns: TableColumn[] = [
     {
@@ -80,15 +81,40 @@ const data: TableRow[] = [
     },
 ]
 
+const info1 = {
+    rem: 2,
+    total: 12
+}
+const info2 = {
+    rem: 7,
+    total: 24
+}
+
+const info3 = {
+    rem: 6,
+    total: 21
+}
+
 </script>
 
 <template>
-    <div class="flex flex-col gap-6 p-6">
-        <div>
+    <div class="flex flex-wrap gap-6 p-6">
+        <div class="flex flex-col flex-1 gap-6">
+            <div class="flex gap-6">
+                <InfoCard :info="info1" :cardname="'Leaves'" :text="'remaining'" :color="'purple'"
+                    :icon="'pepicons-pop:leave-circle-filled'" />
+                <InfoCard :info="info2" :cardname="'WFH days'" :text="'remaining'" :color="'cyan'"
+                    :icon="'ic:round-home-work'" />
+                <InfoCard :info="info3" :cardname="'Requests'" :text="'approved'" :color="'rose'"
+                    :icon="'ant-design:form-outlined'" />
+                <InfoCard :info="info3" :cardname="'Check-in'" :text="'late-ins'" :color="'orange'"
+                    :icon="'akar-icons:check-in'" />
+            </div>
+            <div class="p-6 bg-white rounded-2xl">
+                <TableCustom :columns="columns" :data="data" />
+            </div>
+        </div>
+        <div class="bg-white h-80 min-w-[320px] rounded-2xl bg-gre">
 
         </div>
-        <div class="p-6 bg-white rounded-2xl">
-            <TableCustom :columns="columns" :data="data"/>
-        </div>
-    </div>
-</template>
+</div></template>
