@@ -24,13 +24,13 @@ const activeDate = ref(new Date());
             <div class="flex items-center gap-6 p-5 bg-indigo-500 rounded-2xl">
                 <span class="w-56 text-xl font-bold text-white">{{ DateFn.format(activeDate, "MMMM yyyy") }}</span>
                 <div class="flex gap-3">
-                    <div class="p-1 rounded-lg cursor-pointer bg-primary-2"
+                    <div class="p-2 bg-white rounded-full cursor-pointer"
                         @click="activeDate = DateFn.subMonths(activeDate, 1)">
-                        <Icon icon="lucide:chevron-left" color="white" />
+                        <Icon icon="lucide:chevron-left" color="indigo" />
                     </div>
-                    <div class="p-1 rounded-lg cursor-pointer bg-primary-2"
+                    <div class="p-2 bg-white rounded-full cursor-pointer"
                         @click="activeDate = DateFn.addMonths(activeDate, 1)">
-                        <Icon icon="lucide:chevron-right" color="white" />
+                        <Icon icon="lucide:chevron-right" color="indigo" />
                     </div>
                 </div>
             </div>

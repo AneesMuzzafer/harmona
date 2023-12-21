@@ -12,6 +12,7 @@ import TableCustom from '@/components/TableCustom.vue';
 import { type TableColumn, type TableRow } from '@/App.d';
 import { TableDataType } from "./../utils/util";
 import InfoCard from '@/components/InfoCard.vue';
+import ButtonMain from "@/components/ButtonMain.vue";
 
 const columns: TableColumn[] = [
     {
@@ -95,11 +96,22 @@ const info3 = {
     total: 21
 }
 
+const handleClick = () => {
+    console.log("clicked");
+}
+
 </script>
 
 <template>
     <div class="flex flex-wrap gap-6 p-6">
         <div class="flex flex-col flex-1 gap-6">
+            <div class="flex justify-between flex-1 p-4 bg-white rounded-2xl">
+                <div class="flex gap-4">
+                    <ButtonMain variant="outlined" @click=handleClick>Check-in</ButtonMain>
+                    <ButtonMain variant="outlined" @click=handleClick>Check-out</ButtonMain>
+                </div>
+                <ButtonMain variant="filled">Raise a request</ButtonMain>
+            </div>
             <div class="flex gap-6">
                 <InfoCard :info="info1" :cardname="'Leaves'" :text="'remaining'" :color="'purple'"
                     :icon="'pepicons-pop:leave-circle-filled'" />
@@ -117,4 +129,5 @@ const info3 = {
         <div class="bg-white h-80 min-w-[320px] rounded-2xl bg-gre">
 
         </div>
-</div></template>
+    </div>
+</template>
