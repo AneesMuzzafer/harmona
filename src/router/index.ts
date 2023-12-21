@@ -24,14 +24,14 @@ const router = createRouter({
             component: DashboardView
         },
         {
-            path: Route.CALENDAR,
-            name: RouteName.CALENDAR,
-            component: CalendarView
-        },
-        {
             path: Route.REQUESTS,
             name: RouteName.REQUESTS,
             component: RequestsView,
+        },
+        {
+            path: Route.CALENDAR,
+            name: RouteName.CALENDAR,
+            component: CalendarView
         },
         {
             path: Route.PROFILE,

@@ -60,7 +60,7 @@ const data: TableRow[] = [
         request_at: new Date(),
         start_at: new Date(),
         end_at: new Date(),
-        status: "rejected",
+        status: "pending",
         reason_title: "Urgent Work",
         request_type: "leave"
     },
@@ -105,10 +105,10 @@ const handleClick = () => {
 <template>
     <div class="flex flex-wrap gap-6 p-6">
         <div class="flex flex-col flex-1 gap-6">
-            <div class="flex justify-between flex-1 p-4 bg-white rounded-2xl">
+            <div class="flex flex-wrap justify-between flex-1 p-4 bg-white rounded-2xl">
                 <div class="flex gap-4">
-                    <ButtonMain variant="outlined" @click=handleClick>Check-in</ButtonMain>
-                    <ButtonMain variant="outlined" @click=handleClick>Check-out</ButtonMain>
+                    <ButtonMain class="w-32" variant="outlined" @click=handleClick>Clock-in</ButtonMain>
+                    <ButtonMain class="w-32" variant="outlined" @click=handleClick>Clock-out</ButtonMain>
                 </div>
                 <ButtonMain variant="filled">Raise a request</ButtonMain>
             </div>
